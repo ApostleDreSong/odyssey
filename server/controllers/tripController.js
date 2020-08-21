@@ -12,7 +12,7 @@ const controller = {
       if (req.body.startStation !== req.body.endStation) {
         transport = rocket.transOrbitFare;
       } else {
-        transport = rocket.transport = rocket.transOrbitFare;
+        transport = rocket.intraOrbitFare;
       }
       ///Get landing station if man-made
       let endSationDetails = await db.stations.findOne({
