@@ -1,22 +1,37 @@
-# MERN-Full-Stack-Boilerplate
-MERN Full Stack Boilerplate. Mysql database using sequelize as a connection to the database.(http://docs.sequelizejs.com/) Node as a backend and React as a Front end. To Start using this repo you must have npm and node and yarn installed. To install node go to https://nodejs.org/en/ and follow the instructions. To install run the command npm install yarn -g in to your terminal. The next thing to install should mysql workbench https://dev.mysql.com/downloads/workbench/. 
-* create a .env.local file in the root directory similar to below, but with your database info:
-```
+# Odyssey App
+Step 1
+Open a project directory on your PC and clone this project
+"git clone https://github.com/ApostleDreSong/odyssey.git"
 
-```
-DB_HOST=127.0.0.1
-DB_USERNAME=root
-DB_PASSWORD=ChangeMe123
-DB_SCHEMA=example_db
+Step 2
+Configure .env.local file in the root of your project with your database options
+
+DB_HOST=localhost
+DB_USERNAME=zijela
+DB_PASSWORD=Zijela@1234$
+DB_SCHEMA=odyssey
 DB_DIALECT=mysql
-```
 
-Next in your terminal on the repo run a yarn command which will download the files on the package.json file necessary for this app to run.
+You can either model your database options after the details above or use your own config details.
+DB_DIALECT can be "mysql" or "postgres" based on your database of choice
 
-* run schema.sql simply to create the schema in mysql workbench/command line.  Sequelize will take care of creating tables based on models created in server/models folder.
-* run ```yarn watch``` or ```npm run watch``` for instant update of client/server on changes and use localhost:3000 for any frontend work and localhost:3001 for any backend work.
-* run ```yarn dev``` or ```npm run dev``` to build and run the built files locally.  Use localhost:3001 for both frontend and backend.  This is more similar to what would be deployed on prod.
-* run ```yarn prod``` or ```npm run prod``` to build and run the built files locally.  Use localhost:3001 for both frontend and backend.  This is what would be deployed on prod.
-* run ```yarn prod-build``` or ```npm run prod-build``` to build files for prod.  On prod server only files that need to be deployed are the build folder files.  The server just needs to run ```node app.js``` from the build folder to run.
+Step 3
 
-Warning this app has already had the command yarn eject run. 
+Go to the root of your project and install the necessary dependencies using
+"npm install"
+
+Step 4
+npm run watch
+
+Step 5
+Go to your browser and type in the following url to seed with initial data
+http://localhost:3001/api/seed
+
+Step 6
+Go to your browser and type in the following url to start using the application
+http://localhost:3000
+
+Step 7
+To log in to the application, use "ademesodamilare@gmail.com" as user email.
+
+Cheers!

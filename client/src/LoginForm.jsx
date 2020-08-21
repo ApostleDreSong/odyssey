@@ -38,7 +38,7 @@ function LoginForm(props) {
   };
 
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" style={{marginTop: "30px"}}>
       <Grid item>
         {!loggedIn ? (
           <form onSubmit={login}>
