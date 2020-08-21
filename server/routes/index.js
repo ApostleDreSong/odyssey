@@ -4,6 +4,7 @@ import user from "./user";
 import wallet from "./wallet";
 import station from "./station";
 import fare from "./trip";
+import seed from "./seed";
 
 const routers = {
   payment,
@@ -11,6 +12,7 @@ const routers = {
   user,
   wallet,
   station,
-  fare
+  fare,
+  seed
 };
 export { routers as default };

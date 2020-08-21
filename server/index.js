@@ -14,6 +14,7 @@ export default (path) => {
   app.use(cors({ origin: "*" }));
 
   app.use(express.static(`${path}/client`));
+  app.use("/api/seed", routers.seed)
   app.use("/api/payment", routers.payment);
   app.use("/api/user", routers.user);
   app.use("/api/wallet", routers.wallet);
