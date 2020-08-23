@@ -90,13 +90,15 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   ListItem: {
-    padding: 0,
+    padding: `5px 0px 5px 42px`,
+    boxSizing: "border-box"
   },
   SideFont: {
     fontFamily: "Segoe UI",
     fontSize: "11px",
     lineHeight: "15px",
     color: "#647787",
+    paddingLeft: "42px",
   },
   box: {
     display: "flex",
@@ -245,7 +247,7 @@ export default function Dashboard() {
       >
         <Toolbar />
         <div className={classes.drawerContainer}>
-          <div style={{ paddingLeft: "42px", marginTop: "33px" }}>
+          <div style={{ marginTop: "33px" }}>
             <Button
               style={{
                 backgroundColor: "#27AE60",
@@ -258,9 +260,10 @@ export default function Dashboard() {
                 fontSize: "12px",
                 lineHeight: "14px",
                 letterSpacing: "0.2px",
+                marginLeft: "42px",
               }}
             >
-              GENERATE STATEMENT
+              GENERATE TRIP HISTORY
             </Button>
             <List className={classes.List}>
               <p className={classes.SideFont}>Main</p>
@@ -271,9 +274,15 @@ export default function Dashboard() {
               ].map((text, index) => (
                 <ListItem
                   button
-                  key={text}
+                  key={index}
                   className={classes.ListItem}
-                  onClick={()=>changePanel(text[2])}
+                  onClick={() => changePanel(text[2])}
+                  style={{
+                    backgroundColor:
+                      text[2] === panel ? "rgba(24, 117, 240, 0.1)" : null,
+                    borderLeft: text[2] === panel ? "4px solid #1875F0" : null,
+                    padding: `5px 0px 5px ${text[2] === panel ? "38px":"42px"}`,
+                  }}
                 >
                   <img style={{ marginRight: "10px" }} src={text[1]} />
                   <ListItemText primary={text[0]} />
@@ -283,7 +292,12 @@ export default function Dashboard() {
 
             <List className={classes.List}>
               {[["Log Out", MerchantIcon]].map((text, index) => (
-                <ListItem button key={text} className={classes.ListItem}>
+                <ListItem
+                  key={index}
+                  button
+                  key={text}
+                  className={classes.ListItem}
+                >
                   <img style={{ marginRight: "10px" }} src={text[1]} />
                   <ListItemText primary={text[0]} />
                 </ListItem>
@@ -298,7 +312,7 @@ export default function Dashboard() {
             fontFamily: "Segoe UI",
             fontSize: "18px",
             lineHeight: "21px",
-            marginBottom: "20px"
+            marginBottom: "20px",
           }}
         >
           Today: {date}, {month} {year}

@@ -11,7 +11,7 @@ import Dashboard from "./Dashboard.jsx";
 function LoginForm(props) {
   const [loginDetails, setLoginDetails] = useState({});
   const [error, setError] = useState();
-  const [loggedIn, setloggedIn] = useState(false);
+  const [loggedIn, setloggedIn] = useState(true);
 
   const updateLoginDetails = (e, key) => {
     setLoginDetails({

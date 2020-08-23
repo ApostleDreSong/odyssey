@@ -100,8 +100,10 @@ export default function Trip() {
             required
           >
             <MenuItem value=""></MenuItem>
-            {rockets.map((rocket) => (
-              <MenuItem value={rocket.id}>{rocket.name}</MenuItem>
+            {rockets.map((rocket, index) => (
+              <MenuItem key={index} value={rocket.id}>
+                {rocket.name}
+              </MenuItem>
             ))}
           </Select>
           <FormHelperText>Choose Rocket</FormHelperText>
@@ -118,8 +120,8 @@ export default function Trip() {
             required
           >
             <MenuItem value=""></MenuItem>
-            {stations.map((station) => (
-              <MenuItem value={station.id}>{station.name}</MenuItem>
+            {stations.map((station, index) => (
+              <MenuItem key={index} value={station.id}>{station.name}</MenuItem>
             ))}
           </Select>
           <FormHelperText>Choose Start Station</FormHelperText>
@@ -136,8 +138,10 @@ export default function Trip() {
             required
           >
             <MenuItem value=""></MenuItem>
-            {stations.map((station) => (
-              <MenuItem value={station.id}>{station.name}</MenuItem>
+            {stations.map((station, index) => (
+              <MenuItem key={index} value={station.id}>
+                {station.name}
+              </MenuItem>
             ))}
           </Select>
           <FormHelperText>Choose End Station</FormHelperText>
